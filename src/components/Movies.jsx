@@ -1,3 +1,5 @@
+//TODO: Please consider handling cases where movies is not yet defined or has no results
+
 import Movie from './Movie'
 import '../styles/movies.scss'
 

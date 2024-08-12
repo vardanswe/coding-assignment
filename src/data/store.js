@@ -1,3 +1,5 @@
+//TODO: Please consider importing only reducers from Slice files by correct namings. Ex: moviesReducer, starredReducer, watchLaterReducer
+
 import { configureStore } from "@reduxjs/toolkit"
 import moviesSlice from './moviesSlice'
 import starredSlice from './starredSlice'

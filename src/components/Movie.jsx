@@ -1,10 +1,13 @@
+//TODO: Please consider avoiding inline functions for more clarity
+//TODO: Please consider accessing specific slices of state directly by optimizing useSelector calls
+
 import { useDispatch, useSelector } from 'react-redux'
 import starredSlice from '../data/starredSlice'
 import watchLaterSlice from '../data/watchLaterSlice'
 import placeholder from '../assets/not-found-500X750.jpeg'
 
 const Movie = ({ movie, viewTrailer, closeCard }) => {
-
+    // TODO: closeCard is not used remove or use as needed
     const state = useSelector((state) => state)
     const { starred, watchLater } = state
     const { starMovie, unstarMovie } = starredSlice.actions
@@ -13,7 +16,7 @@ const Movie = ({ movie, viewTrailer, closeCard }) => {
     const dispatch = useDispatch()
 
     const myClickHandler = (e) => {
-        if (!e) var e = window.event
+        if (!e) var e = window.event //TODO: Please consider using e = e || window.event; instead
         e.cancelBubble = true
         if (e.stopPropagation) e.stopPropagation()
         e.target.parentElement.parentElement.classList.remove('opened')

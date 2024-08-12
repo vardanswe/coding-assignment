@@ -1,3 +1,6 @@
+//TODO: Please check moviesSlice.js comments and apply here too
+//TODO: Please consider using filter instead of splice to avoid direct mutation of the array
+
 import { createSlice } from "@reduxjs/toolkit"
 
 const watchLaterSlice = createSlice({
