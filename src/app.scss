@@ -30,10 +30,12 @@
   .popup-content {
     width: auto;
     max-width: 95%;
+    // TODO: Please consider removing unnecessary vendor prefixes and incorrect transition property
     -moz-transition: anvil 0.3s cubic-bezier(0.38, 0.1, 0.36, 0.9) forwards;
     -ms-transition: anvil 0.3s cubic-bezier(0.38, 0.1, 0.36, 0.9) forwards;
     -o-transition: anvil 0.3s cubic-bezier(0.38, 0.1, 0.36, 0.9) forwards;
-    transition: anvil 0.3s cubic-bezier(0.38, 0.1, 0.36, 0.9) forwards;        
+    transition: anvil 0.3s cubic-bezier(0.38, 0.1, 0.36, 0.9) forwards;
+
     -webkit-animation: anvil 0.3s cubic-bezier(0.38, 0.1, 0.36, 0.9) forwards;
     animation: anvil 0.3s cubic-bezier(0.38, 0.1, 0.36, 0.9) forwards;
 
