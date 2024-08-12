@@ -1,3 +1,7 @@
+//TODO: Please consider storing initialState in a separate const and add initial state to make sure no fetch operation is in progress if needed
+//TODO: Please consider improving error handling by adding check for response status
+//TODO: Please consider using same code style for all slices exporting only reducers and the action creators
+
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 
 export const fetchMovies = createAsyncThunk('fetch-movies', async (apiUrl) => {

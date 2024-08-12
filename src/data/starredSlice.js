@@ -1,3 +1,5 @@
+//TODO: Please check moviesSlice.js comments and apply here too
+
 import { createSlice } from "@reduxjs/toolkit"
 
 const starredSlice = createSlice({

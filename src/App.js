@@ -19,10 +19,11 @@ const App = () => {
   const [searchParams, setSearchParams] = useSearchParams()
   const searchQuery = searchParams.get('search')
   const [videoKey, setVideoKey] = useState()
-  const [isOpen, setOpen] = useState(false)
+  //TODO: please use isOpen as needed or remove
+  const [isOpen, setOpen] = useState(false) // not used
   const navigate = useNavigate()
-  
-  const closeModal = () => setOpen(false)
+  //TODO: please use closeModal as needed for handling the Modal
+  const closeModal = () => setOpen(false) // not used
   
   const closeCard = () => {
 
@@ -43,6 +44,7 @@ const App = () => {
     getSearchResults(query)
   }
 
+  // TODO: please use useCallback for Memoization
   const getMovies = () => {
     if (searchQuery) {
         dispatch(fetchMovies(`${ENDPOINT_SEARCH}&query=`+searchQuery))
@@ -57,6 +59,7 @@ const App = () => {
     setOpen(true)
   }
 
+  //TODO: Please consider adding a try-catch block for error handling
   const getMovie = async (id) => {
     const URL = `${ENDPOINT}/movie/${id}?api_key=${API_KEY}&append_to_response=videos`
 
@@ -71,8 +74,8 @@ const App = () => {
   }
 
   useEffect(() => {
-    getMovies()
-  }, [])
+    getMovies();
+  }, []); // TODO: Please use memoized getMovies as a dependency
 
   return (
     <div className="App">

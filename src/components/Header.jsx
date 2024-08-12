@@ -1,3 +1,6 @@
+//TODO: Please consider moving the logic for handling search changes and reset actions into separate functions
+//TODO: Please consider removing <Link> Around the Search Input
+
 import { Link, NavLink } from "react-router-dom"
 import { useSelector } from 'react-redux'
 
@@ -38,7 +41,7 @@ const Header = ({ searchMovies }) => {
             aria-label="Search movies" 
             aria-describedby="search-addon" 
             />
-        </Link>            
+        </Link>
       </div>      
     </header>
   )

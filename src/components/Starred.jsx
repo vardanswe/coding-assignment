@@ -1,3 +1,6 @@
+//TODO: Please consider avoiding inline functions for more clarity
+//TODO: Please consider accessing specific slices of state directly. Ex: const { starredMovies } = useSelector((state) => state.starred);
+
 import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import starredSlice from '../data/starredSlice'

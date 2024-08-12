@@ -1,8 +1,13 @@
+//TODO: Please consider accessing specific slices of state directly to avoid redundant state access
+//      const { watchLaterMovies } = useSelector((state) => state.watchLater);
+//TODO: Please consider fixing typo in action function name removeAllWatchLater instead of remveAllWatchLater in whole project
+
 import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import watchLaterSlice from '../data/watchLaterSlice'
 import Movie from './Movie'
 import '../styles/starred.scss'
+
 
 const WatchLater = ({viewTrailer}) => {
 
