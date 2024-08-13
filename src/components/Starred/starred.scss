@@ -1,0 +1,6 @@
+@import "../../styles/mixins";
+.starred {
+    footer {
+        @include footer-styles;
+    }
+}
