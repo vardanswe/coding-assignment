@@ -11,7 +11,7 @@ const App = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const searchQuery = searchParams.get('search') || '';
   const navigate = useNavigate();
-  const { movies, videoKey, isOpen, viewTrailer, closeModal } = useMovies(searchQuery);
+  const { movies, videoKey, isOpen, viewTrailer, closeModal, loadMoreMovies, fetchStatus } = useMovies(searchQuery, 1);
 
   const searchMovies = (query) => {
     navigate('/');
@@ -21,15 +21,22 @@ const App = () => {
   return (
       <div className="App">
         <Header searchMovies={searchMovies} searchParams={searchParams} setSearchParams={setSearchParams} />
-
         <div className="container">
           <Routes>
-            <Route path="/" element={<Movies movies={movies} viewTrailer={viewTrailer} />} />
+            <Route
+                path="/"
+                element={<Movies
+                    movies={movies}
+                    viewTrailer={viewTrailer}
+                    closeCard={closeModal}
+                    loadMoreMovies={loadMoreMovies}
+                    fetchStatus={fetchStatus}
+                />}
+            />
             <Route path="/starred" element={<Starred viewTrailer={viewTrailer} />} />
             <Route path="/watch-later" element={<WatchLater viewTrailer={viewTrailer} />} />
             <Route path="*" element={<h1 className="not-found">Page Not Found</h1>} />
           </Routes>
-
           <Modal isOpen={isOpen} onClose={closeModal} videoKey={videoKey} />
         </div>
       </div>

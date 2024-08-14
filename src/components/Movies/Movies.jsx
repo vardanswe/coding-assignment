@@ -1,11 +1,14 @@
-import Movie from './Movie'
-import './movies.scss'
+import React from 'react';
+import Movie from './Movie';
+import useInfiniteScroll from '../../hooks/useInfiniteScroll';
+import './movies.scss';
 
-const Movies = ({ movies, viewTrailer, closeCard }) => {
+const Movies = ({ movies, viewTrailer, closeCard, loadMoreMovies, fetchStatus }) => {
+    useInfiniteScroll(loadMoreMovies, fetchStatus);
 
     return (
         <div data-testid="movies" className="grid-container">
-            {movies.movies.results?.map((movie) => (
+            {movies.results?.map((movie) => (
                 <Movie
                     movie={movie}
                     key={movie.id}
@@ -13,9 +16,10 @@ const Movies = ({ movies, viewTrailer, closeCard }) => {
                     closeCard={closeCard}
                 />
             ))}
+            {fetchStatus === 'loading' && <p>Loading more movies...</p>}
+            {fetchStatus === 'error' && <p>Error loading movies.</p>}
         </div>
+    );
+};
 
-    )
-}
-
-export default Movies
+export default Movies;
