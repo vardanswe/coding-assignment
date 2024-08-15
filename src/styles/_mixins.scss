@@ -1,0 +1,26 @@
+@mixin button-styles($bg-color, $text-color, $hover-bg-color) {
+  width: auto;
+  padding: 0 20px;
+  font-size: 0.8rem;
+  background: $bg-color;
+  color: $text-color;
+  border: none;
+
+  &:hover {
+    background: $hover-bg-color;
+  }
+}
+
+@mixin footer-styles {
+  .total-price {
+    font-size: 1.8rem;
+  }
+
+  .btn {
+    @include button-styles(red, #fff, darkred);
+  }
+
+  .back-button {
+    @include button-styles(#efefef, #000, #dedede);
+  }
+}

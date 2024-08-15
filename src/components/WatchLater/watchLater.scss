@@ -1,0 +1,6 @@
+@import "../../styles/mixins";
+.watch-later {
+    footer {
+        @include footer-styles;
+    }
+}
